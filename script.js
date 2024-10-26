@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', (event) => {
   const button = document.createElement('button');
-  button.textContent = 'Click me!';
+  button.textContent = 'My LinkedIn!';
   button.addEventListener('click', () => {
-      alert('Hello, World!');
+      window.location.href = 'https://www.linkedin.com/in/russellwhicks/';
   });
-  document.body.appendChild(button);
+  const mainSection = document.querySelector('main');
+  mainSection.appendChild(button);
 });
 
 
