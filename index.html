@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website with ASCII Background</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Personal Blog</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header >
-        
-        <h1 style="text-align: right;">Welcome to My Website</h1>
+    <nav class="navbar">
+        <div class="nav-brand">Your Name</div>
+        <button class="nav-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Welcome to My Blog</h1>
+        <p>Thoughts, stories and ideas.</p>
     </header>
-    <main>
-        <p>This is the main content area. The ASCII sphere is in the background!</p>
+
+    <main class="container">
+        <section class="posts-grid">
+            <article class="post-card">
+                <div class="post-image"></div>
+                <div class="post-content">
+                    <h2>First Blog Post</h2>
+                    <p class="post-excerpt">This is a sample blog post introduction. Click to read more...</p>
+                    <a href="posts/sample-post.html" class="read-more">Read More</a>
+                </div>
+            </article>
+            <!-- More post cards can be added here -->
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Russell Hicks</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
