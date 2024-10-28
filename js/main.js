@@ -35,4 +35,28 @@ document.addEventListener('DOMContentLoaded', () => {
           link.classList.add('active');
       }
   });
+
+  // Handle all post images
+  const postImages = document.querySelectorAll('.post-image img');
+    
+  postImages.forEach(img => {
+      // Add loading attribute for better performance
+      img.loading = 'lazy';
+      
+      // Handle image loading errors
+      img.onerror = function() {
+          this.src = 'images/default-placeholder.jpg'; // Your default image
+          this.alt = 'Image not available';
+      };
+
+      // Optional: Add classes based on image orientation
+      img.onload = function() {
+          const aspect = this.naturalWidth / this.naturalHeight;
+          if (aspect > 1.5) {
+              this.parentElement.classList.add('landscape');
+          } else if (aspect < 0.75) {
+              this.parentElement.classList.add('portrait');
+          }
+      };
+  });
 });
