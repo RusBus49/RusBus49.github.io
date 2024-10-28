@@ -6,16 +6,22 @@
     <title>My First Blog Post - My Personal Blog</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../js/main.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-brand">Russell Hicks</div>
+        <div class="nav-left">
+            <a href="../index.html" class="logo-link">
+                <img src="../images/site/logo.png" alt="Russell's Logo" class="nav-logo">
+            </a>
+            <div class="nav-brand">Russell's Stuff</div>
+        </div>  
         <button class="nav-toggle">
             <i class="fas fa-bars"></i>
         </button>
         <ul class="nav-menu">
             <li><a href="../index.html">Home</a></li>
-            <li><a href="../posts/sample-post.html">Blog</a></li>
+            <li><a href="../posts/post 1.html">Blog</a></li>
             <li><a href="../about.html">About</a></li>
         </ul>
     </nav>
@@ -23,17 +29,17 @@
     <main class="post-container">
         <article class="blog-post">
           <figure class="post-image">
-            <img src="../images/posts/pip fly.jpeg" alt="First Post Title">
-            <figcaption>Featured image caption</figcaption>
+            <img src="../images/posts/post 1 picture.webp" alt="First Post Title">
+            <figcaption>Sequoia infrastructure map</figcaption>
         </figure>
             <header class="post-header">
                 <div class="post-meta">
                     <time datetime="2024-10-26">October 26, 2024</time>
-                    <span class="post-category">Technology</span>
+                    <span class="post-category">Technology, AI</span>
                 </div>
-                <h1>Getting Started with Web Development</h1>
+                <h1>The State of Infrastructure for AI</h1>
                 <div class="post-author">
-                    <img src="../images/avatar.jpg" alt="Author" class="author-avatar">
+                    <img src="../images//site/avatar.jpg" alt="Author" class="author-avatar">
                     <div class="author-info">
                         <span class="author-name">Russell Hicks</span>
                         <span class="read-time">5 min read</span>
@@ -103,6 +109,5 @@
       <p>&copy; 2024 Russell Hicks. All rights reserved.</p>
   </footer>
 
-    <script src="../js/main.js"></script>
 </body>
 </html>
