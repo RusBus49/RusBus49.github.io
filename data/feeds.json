@@ -1,0 +1,14 @@
+{
+  "feeds": [
+      {
+          "name": "TechCrunch",
+          "url": "https://techcrunch.com/feed/",
+          "category": "tech"
+      },
+      {
+          "name": "Bloomberg",
+          "url": "https://feeds.bloomberg.com/markets/news.rss",
+          "category": "finance"
+      }
+  ]
+}
