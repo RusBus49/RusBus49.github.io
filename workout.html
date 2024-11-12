@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Plan - Russell's Stuff</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="workout-styles.css">
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo-link">
+                <img src="images/site/logo.png" alt="Russell's Logo" class="nav-logo">
+            </a>
+            <div class="nav-brand">Russell's Stuff</div>
+        </div>  
+      <button class="nav-toggle">
+            <i class="fas-fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="posts/post 1.html">Blog</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="workout.html">Workout Plan</a></li>
+        </ul>
+    </nav>
+
+    <div class="program-container">
+        <div class="all-weeks">
+            <!-- Week 1 -->
+            <div class="week-block">
+                <h2 class="week-title">Week 1 - Foundation</h2>
+                <div class="calendar">
+                    <div class="calendar-day" onclick="showWorkout('week1', 'monday')">
+                        <h3>Monday</h3>
+                        <div class="workout-title">Push + Arms</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'tuesday')">
+                        <h3>Tuesday</h3>
+                        <div class="workout-title">Legs + Running</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'wednesday')">
+                        <h3>Wednesday</h3>
+                        <div class="workout-title">Back + Arms</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'thursday')">
+                        <h3>Thursday</h3>
+                        <div class="workout-title">Legs + Running</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'friday')">
+                        <h3>Friday</h3>
+                        <div class="workout-title">Shoulders + Arms</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'saturday')">
+                        <h3>Saturday</h3>
+                        <div class="workout-title">Light Upper</div>
+                    </div>
+                    <div class="calendar-day" onclick="showWorkout('week1', 'sunday')">
+                        <h3>Sunday</h3>
+                        <div class="workout-title">Sprint Training</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="week-block">
+                <h2 class="week-title">Week 2 - Volume</h2>
+                <div class="calendar">
+                    <!-- Same structure as Week 1, with updated onclick="showWorkout('week2', 'day')" -->
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="week-block">
+                <h2 class="week-title">Week 3 - Intensity</h2>
+                <div class="calendar">
+                    <!-- Same structure as Week 1, with updated onclick="showWorkout('week3', 'day')" -->
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="week-block">
+                <h2 class="week-title">Week 4 - Peak</h2>
+                <div class="calendar">
+                    <!-- Same structure as Week 1, with updated onclick="showWorkout('week4', 'day')" -->
+                </div>
+            </div>
+
+            <!-- Week 5 -->
+            <div class="week-block">
+                <h2 class="week-title">Week 5 - Test Week</h2>
+                <div class="calendar">
+                    <!-- Same structure as Week 1, with updated onclick="showWorkout('week5', 'day')" -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Workout Detail Modal -->
+    <div class="modal" id="workoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-button" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Workout details will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/RusBus49" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/russellwhicks" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <p>&copy; 2024 Russell Hicks. All rights reserved.</p>
+    </footer>
+
+    <script src="js/workout-data.js"></script>
+    <script src="js/workout.js"></script>
+</body>
+</html>

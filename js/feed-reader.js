@@ -28,6 +28,10 @@ class FeedReader {
         this.feedItems = document.getElementById('feedItems');
         this.feedCategories = document.getElementById('feedCategories');
         
+        this.itemsPerPage = 6; // Number of items to show initially
+        this.currentItems = [];
+        this.currentPage = 1;
+
         this.init();
     }
 
@@ -96,11 +100,11 @@ class FeedReader {
             const feedPromises = this.feeds.map(feed => this.fetchFeed(feed));
             const feedResults = await Promise.all(feedPromises);
             
-            const allItems = feedResults
+            this.currentItems = feedResults
                 .flat()
                 .sort((a, b) => b.pubDate - a.pubDate);
             
-            this.renderItems(allItems);
+            this.renderItems();
         } catch (error) {
             console.error('Error fetching feeds:', error);
             this.feedItems.innerHTML = `
@@ -113,13 +117,15 @@ class FeedReader {
         }
     }
 
-    renderItems(items) {
-        console.log('Rendering items:', items.length);
-        const filteredItems = items.filter(item => 
+    renderItems() {
+        console.log('Rendering items:', this.currentItems.length);
+        const filteredItems = this.currentItems.filter(item => 
             this.currentCategory === 'all' || item.category === this.currentCategory
         );
 
-        const html = filteredItems.map(item => `
+        const itemsToShow = filteredItems.slice(0, this.itemsPerPage * this.currentPage);
+        
+        const html = itemsToShow.map(item => `
             <article class="feed-item">
                 <div class="feed-item-content">
                     <div class="feed-item-header">
@@ -137,17 +143,35 @@ class FeedReader {
                 </div>
             </article>
         `).join('');
-            
+        
+        const showMoreButton = filteredItems.length > itemsToShow.length ? `
+            <div class="show-more-container">
+                <button class="show-more-button" onclick="window.feedReader.loadMore()">
+                    Show More
+                </button>
+            </div>
+        ` : '';
+
         this.feedItems.innerHTML = html || `
             <div class="text-center py-4">
                 No items found for this category.
             </div>
         `;
+
+        if (showMoreButton) {
+            this.feedItems.insertAdjacentHTML('beforeend', showMoreButton);
+        }
+    }
+
+    loadMore() {
+        this.currentPage++;
+        this.renderItems();
     }
 
     filterByCategory(category) {
         console.log('Filtering by category:', category);
         this.currentCategory = category;
+        this.currentPage = 1; // Reset to first page when changing categories
         this.showLoading(true);
         this.fetchAllFeeds();
     }
