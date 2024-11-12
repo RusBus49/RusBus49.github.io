@@ -18,8 +18,8 @@ A simple personal blog built with HTML, CSS, and JavaScript.
 - [ ] Add dark mode toggle
 - [ ] Implement a search function
 - [ ] Add a comments section
-- [ ] Create a contact form
-- [ ] Add more interactive elements
+- [ ] Optimize CSS
+- [ ] Optimize common HTML elements
 
 ### 🙏 Acknowledgments
 - Font Awesome for icons
