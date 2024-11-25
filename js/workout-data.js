@@ -22,7 +22,6 @@ const workoutData = {
                   "Rest: 2-3 minutes",
                   "Superset with: Standing DB Curls 4 x 10-12 (35 lbs)"
               ],
-              notes: "Use superset rest period to recover for next bench set"
           },
           {
               name: "2. Seated DB Press",
@@ -404,9 +403,9 @@ const workoutData = {
                     "- 95 lbs × 8",
                     "- 135 lbs × 5",
                     "Working sets:",
-                    "- 195 lbs: 4 sets of 6 reps",
+                    "- 185 lbs: 4 sets of 6 reps",
                     "Rest: 2-3 minutes",
-                    "Superset with: Standing DB Curls 4 x 11-13 (35 lbs)"
+                    "Superset with: Standing DB Curls 4 x 11-13 (30 lbs)"
                 ],
                 notes: "Use superset rest period to recover for next bench set"
             },
