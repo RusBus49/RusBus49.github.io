@@ -40,16 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const postImages = document.querySelectorAll('.post-image img');
     
   postImages.forEach(img => {
-      // Add loading attribute for better performance
       img.loading = 'lazy';
       
-      // Handle image loading errors
+      // Image loading errors
       img.onerror = function() {
           this.src = 'images/default-placeholder.jpg'; // Your default image
           this.alt = 'Image not available';
       };
 
-      // Optional: Add classes based on image orientation
+      // Classes based on image orientation
       img.onload = function() {
           const aspect = this.naturalWidth / this.naturalHeight;
           if (aspect > 1.5) {
@@ -59,6 +58,27 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       };
   });
-
-  
 });
+
+// Social sharing
+function shareOnLinkedIn(event) {
+    event.preventDefault();
+    
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    
+    const linkedInUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    
+    window.open(linkedInUrl, 'ShareOnLinkedIn', 
+        'width=600,height=600,location=0,menubar=0,toolbar=0,status=0,scrollbars=1');
+}
+
+// Tracking
+function trackShare(platform) {
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'share', {
+            'event_category': 'Social',
+            'event_label': platform
+        });
+    }
+}
