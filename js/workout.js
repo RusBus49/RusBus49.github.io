@@ -59,7 +59,6 @@ function closeModal() {
   modal.classList.remove('show');
 }
 
-// Close modal when clicking outside
 window.onclick = function(event) {
   const modal = document.getElementById('workoutModal');
   if (event.target === modal) {

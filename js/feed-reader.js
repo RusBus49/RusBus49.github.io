@@ -28,7 +28,7 @@ class FeedReader {
         this.feedItems = document.getElementById('feedItems');
         this.feedCategories = document.getElementById('feedCategories');
         
-        this.itemsPerPage = 6; // Number of items to show initially
+        this.itemsPerPage = 6;
         this.currentItems = [];
         this.currentPage = 1;
 

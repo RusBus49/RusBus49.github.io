@@ -1,9 +1,9 @@
 class TopographicBackground {
     constructor() {
         this.svg = document.querySelector('.topo-background svg');
-        this.lines = 25; // Increase number of lines
+        this.lines = 25;
         this.points = 100;
-        this.amplitude = 40; // Increase amplitude
+        this.amplitude = 40;
         this.frequency = 0.02;
         this.mouseX = 0;
         this.mouseY = 0;
@@ -14,7 +14,7 @@ class TopographicBackground {
     }
 
     init() {
-        // Create initial paths with more vertical distribution
+
         for (let i = 0; i < this.lines; i++) {
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
             path.setAttribute('stroke-opacity', (i + 1) / (this.lines + 1));
@@ -27,7 +27,6 @@ class TopographicBackground {
     }
 
     generatePath(offset, mouseInfluence) {
-        // Calculate vertical position based on line index
         const baseY = this.height / 2;
         let d = `M 0 ${baseY}`;
         
@@ -41,8 +40,7 @@ class TopographicBackground {
                 Math.sin(x * this.frequency * 2 + offset) * this.amplitude * 0.5 +
                 mouseEffect * Math.sin(x * this.frequency * 3);
             
-            // Add vertical mouse influence
-            const mouseYEffect = (this.mouseY - baseY) * 0.1 * mouseInfluence;
+            const mouseYEffect = (this.mouseY - baseY) * 0.2 * mouseInfluence;
             yPos += mouseYEffect;
             
             d += ` L ${xPos} ${yPos}`;
@@ -52,13 +50,11 @@ class TopographicBackground {
 
     updatePaths = () => {
         this.paths.forEach((path, i) => {
-            // Distribute lines vertically
             const verticalOffset = (i - this.lines / 2) * (this.height / this.lines);
             const offset = (Date.now() * 0.001 + i * 0.5) % (Math.PI * 2);
             const mouseInfluence = (i + 1) / this.lines;
             
             path.setAttribute('d', this.generatePath(offset, mouseInfluence));
-            // Adjust vertical position
             path.style.transform = `translateY(${verticalOffset}px)`;
         });
         requestAnimationFrame(this.updatePaths);
